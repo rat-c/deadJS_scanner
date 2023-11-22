@@ -15,7 +15,7 @@ The `dead-JS-scanner` is an extension designed to enhance web browsing security 
 
 ### Testing
 To validate the functionality of dead-JS-scanner, you can use the following public links:
-* ![Sample No. 1: pogonina.com](http://pogonina.com/?onf=skachat-server-mod-dlya-samp)  
+* [Sample No. 1: pogonina.com](http://pogonina.com/?onf=skachat-server-mod-dlya-samp)  
 
 Warning
 This tool is intended for ethical use only. Any misuse, particularly for illegal activities, is strictly prohibited.
