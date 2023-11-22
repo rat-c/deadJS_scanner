@@ -2,9 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.local.get(['filteredScripts'], function(result) {
         if (result.filteredScripts) {
             var listContainer = document.getElementById('script-list');
-            result.filteredScripts.forEach(function(scriptUrl) {
+            result.filteredScripts.forEach(function(scriptInfo) {
+				
+                // Create a paragraph element to hold the script URL
                 var listItem = document.createElement('p');
-                listItem.textContent = scriptUrl;
+                listItem.textContent = `${scriptInfo.scriptUrl}`;
+
+                // Set the title attribute for the tooltip with the source URL
+                listItem.title = `Source: ${scriptInfo.pageUrl}`;
+
+                // Append the listItem to the listContainer
                 listContainer.appendChild(listItem);
             });
         }
@@ -15,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     clearButton.addEventListener('click', function() {
         chrome.storage.local.remove('filteredScripts', function() {
             console.log('Filtered scripts cleared');
-            // Optionally, update the UI to reflect the cleared data
             var listContainer = document.getElementById('script-list');
             listContainer.innerHTML = '';
         });
