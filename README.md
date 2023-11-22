@@ -10,7 +10,7 @@ The `dead-JS-scanner` is an extension designed to enhance web browsing security 
 2.) The tool runs in the background. Simply continue browsing, and the extension will automatically collect relevant data.  
 3.) Click on the extension icon to view any JavaScript files that encountered loading issues.  
 4.) Hover over specific URLs to see the source HTML for further investigation.  
-5.) Buy the webpage via godaddy or something ...  
+5.) Click on the link to be redirected to buy the webpage via godaddy or something ...  
 6.) Change the .js, load some exploits or whatever you want to investigate in ... oops.  
 
 ### Testing
