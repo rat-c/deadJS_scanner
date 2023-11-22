@@ -1,0 +1,19 @@
+{
+    "name": "Rat's dead JS Scanner",
+    "version": "1.0.0",
+	"manifest_version": 3,
+	"description": "A tool for scanning dead JS on each page you visit.",
+    "icons": {
+        "256": "ratscan_256x256.png"
+    },
+    "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
