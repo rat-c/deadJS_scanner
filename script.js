@@ -15,9 +15,17 @@ function checkScriptAccessibility(url) {
         .catch(() => true); // Catch network errors or other issues and consider the script inaccessible
 }
 
+// Function to extract the full domain name and create a redirect link
+function createRedirectLink(url) {
+    let hostname = new URL(url).hostname;
+    let domain = hostname.split('.').slice(-2).join('.');
+    return `https://www.godaddy.com/domainsearch/find?domainToCheck=${domain}`;
+}
+
 // Function to add script information to filteredScripts array
 function addScriptInfo(scriptUrl, pageUrl) {
-    filteredScripts.push({ scriptUrl: scriptUrl, pageUrl: pageUrl });
+    let redirectUrl = createRedirectLink(scriptUrl);
+    filteredScripts.push({ scriptUrl: scriptUrl, pageUrl: pageUrl, redirectUrl: redirectUrl });
 }
 
 // Retrieve existing filteredScripts from chrome.storage.local
@@ -36,7 +44,6 @@ chrome.storage.local.get('filteredScripts', function (data) {
         }
     })).then(() => {
         // Save the updated filteredScripts back to chrome.storage.local
-        chrome.storage.local.set({ 'filteredScripts': filteredScripts }, function () {
-        });
+        chrome.storage.local.set({ 'filteredScripts': filteredScripts });
     });
 });

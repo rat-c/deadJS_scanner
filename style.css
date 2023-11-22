@@ -1,5 +1,27 @@
 body {
-	color:#bababa !important;
-	font-size:16 !important;
-	background-color:#333333 !important;
+	color: #bababa !important;
+	font-size: 16 !important;
+	background-color: #333333 !important;
+	width: 400px;
+}
+
+h1 {
+    font-size: 12px;
+}
+
+a { 
+	text-decoration:none;
+} 
+
+.script-list {
+	margin-top: 1px;
+}
+
+.script-list > * {
+	color: #a1a1a1;
+	margin: 2px;
+}	
+
+.clear-button {
+	margin-top: 15px;
 }

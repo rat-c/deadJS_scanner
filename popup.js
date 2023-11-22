@@ -4,16 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
             var listContainer = document.getElementById('script-list');
             result.filteredScripts.forEach(function(scriptInfo) {
 				
-                // Create a paragraph element to hold the script URL
-                var listItem = document.createElement('p');
-                listItem.textContent = `${scriptInfo.scriptUrl}`;
-
-                // Set the title attribute for the tooltip with the source URL
+				// Create an anchor element for the clickable script URL
+				var listItem = document.createElement('a');
+				listItem.href = scriptInfo.redirectUrl; // Set the redirect URL as the href
+				listItem.textContent = `${scriptInfo.scriptUrl}`;
+				listItem.target = '_blank'; // Open in a new tab
+				listItem.style.display = 'block'; // Style to display as block for better readability
+				
+				// Set the title attribute for the tooltip with the source URL
                 listItem.title = `Source: ${scriptInfo.pageUrl}`;
 
-                // Append the listItem to the listContainer
-                listContainer.appendChild(listItem);
-            });
+				// Append the listItem to the listContainer
+				listContainer.appendChild(listItem);
+			});
         }
     });
 
