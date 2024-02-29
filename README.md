@@ -1,4 +1,4 @@
-# dead-JS-scanner
+# deadJS_scanner
 The extension runs in the background and checks the pages you visit. It automatically detects external JavaScript files that are loaded on these pages and notifies you of any scripts that fail to load correctly.
 
 ![image](https://github.com/ratcode404/dead-JS-scanner/assets/89196953/4f814f59-0c9d-4875-8ed5-da4ae07e0271)
